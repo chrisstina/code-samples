@@ -42,11 +42,6 @@ class SCoreAdv extends SoapClientModel
      */
     public $isGroup = false;
     
-    /**
-     * @var bool
-     */
-   // public $isAttachedToCampaign = false;
-    
     public function __construct() 
     {
         $this->soapUrl = Yii::app()->getModule('adv')->wsdlUrlCore;

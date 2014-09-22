@@ -27,8 +27,6 @@ abstract class SoapClientModel extends CModel
     /**
      * Если не установлен ранее, создает и устанавливает экземпляр SoapClient 
      * по WSDL, указанному в настройках.
-     * 
-     * Если не удалось подключиться, возвращает null.
      */
     public function setSoapClient()
     {
@@ -41,7 +39,6 @@ abstract class SoapClientModel extends CModel
             catch (SoapFault $e)
             {
                 Yii::log('Could not connect to '.$this->soapUrl, 'error');
-                return null;
             }
             Yii::endProfile('setSoap');
         }
@@ -159,4 +156,3 @@ abstract class SoapClientModel extends CModel
         return null;
     }
 }
-?>
